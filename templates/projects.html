@@ -1,0 +1,32 @@
+{% extends "layout.html" %} 
+
+{% block title %}Recent Projects{% endblock %}
+
+{% block content %}
+<section id="projects" class="projects-section">
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-grid">
+      <!-- Project 1 -->
+      <div class="project-card">
+        <img src="{{ url_for('static', filename='project1.jpg') }}" alt="Project 1">
+        <div class="project-info">
+          <h3>Project Title 1</h3>
+          <p>Short description of the project, highlighting key features or challenges solved.</p>
+          <a href="#" class="project-link" target="_blank">View Project</a>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <img src="{{ url_for('static', filename='project2.jpg') }}" alt="Project 2">
+        <div class="project-info">
+            <h3>Project Title 2</h3>
+            <p>Short description of the project, highlighting key features or challenges solved.</p>
+            <a href="#" class="project-link" target="_blank">View Project</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

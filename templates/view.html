@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block title %}See Description{% endblock %}
+
+{% block content %}
+    <div class="my2" style="margin-top: 5%;"> <!-- Added margin-top for spacing -->
+        <table style="width: 80%; margin: 0 auto; border-collapse: collapse; font-family: Arial, sans-serif;">
+            <tr style="background-color: #f2f2f2;">
+                <th style="border: 1px solid #ddd; padding: 10px;">ID</th>
+                <th style="border: 1px solid #ddd; padding: 10px;">Surname</th>
+                <th style="border: 1px solid #ddd; padding: 10px;">Email</th>
+                <th style="border: 1px solid #ddd; padding: 10px;">Street</th>
+                <th style="border: 1px solid #ddd; padding: 10px;">Apartment</th>
+                <th style="border: 1px solid #ddd; padding: 10px;">City</th>
+                <th style="border: 1px solid #ddd; padding: 10px;">Action</th>
+            </tr>
+            {% for user in users %}
+                <tr style="text-align: center;">
+                    <td style="border: 1px solid #ddd; padding: 10px;">{{ user[0] }}</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">{{ user[1] }}</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">{{ user[2] }}</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">{{ user[3] }}</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">{{ user[4] }}</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">{{ user[5] }}</td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">
+                        <!-- Update link -->
+                        <a href="{{ url_for('update', user_id=user[0]) }}" class="btn btn-warning btn-sm">Update</a>
+                    </td>
+                    <td style="border: 1px solid #ddd; padding: 10px;">
+                        <!-- Delete link -->
+                        <a href="{{ url_for('delete', user_id=user[0]) }}" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
+
+
+
